@@ -3,7 +3,7 @@
 //  on importe un protocole HTTP
 const http = require('http');
 
-// on importe notre app qui sera sera utilisée sur le serveur HTTP
+// on importe notre app qui sera utilisée sur le serveur HTTP
 const app = require('./app');
 
 // on met en place l'utilisation du port 3000 sur le serveur HTTP

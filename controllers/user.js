@@ -56,15 +56,12 @@ exports.login = (req, res, next) => {
                 if(!valid) {
                     return res.status(401).json({ message: 'Paire identifiant/mot de passe incorrecte' });
 
-                // si le MDP est correct, on crée un TOKEN de session qui expire dans 24h
+                //si MDP correct, on retourne l'ID de l'utilisateur et on crée son token 'signé' avec .sign()
+                // (incluant l'ID en tant que payload), qui expire dans 24h. Le token est crypté grâce à la clé TOKEN_SECRET et sera aussi décrypté avec cette clé.
                 }else{
                     res.status(200).json({
                         userId: user._id,
-                        token: jwt.sign(
-                            { userId: user._id },
-                            process.env.TOKEN_SECRET,
-                            { expiresIn: '24h' }
-                        )
+                        token: jwt.sign({ userId: user._id },process.env.TOKEN_SECRET,{ expiresIn: '24h' })
                     });
                 }
             })

@@ -1,6 +1,6 @@
 // ********* MISE EN PLACE DE NOTRE APP ET SON ENVIRONNEMENT **********
 
-// on importe l'application 'Express'
+// on importe le framework 'Express'
 const express = require('express');
 
 // on importe le package Dotenv pour pouvoir utiliser des variables d'environnement. 
@@ -23,7 +23,7 @@ const helmet = require("helmet");
 // on importe le package mongo sanitize pour empecher les injections malveillantes dans notre base de données.
 const mongoDbSanitize = require("mongodb-sanitize");
 
-// on crée notre app express (permet d'utiliser des fonctions utiles)
+// on crée notre app express (permet d'utiliser des fonctions du framework express)
 const app = express();
 
 // on importe le package cors qui nous autorise à utiliser des ressources de différentes origines (API/DATABASE)

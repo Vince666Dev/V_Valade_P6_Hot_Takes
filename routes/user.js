@@ -1,6 +1,6 @@
 // ********* ROUTES USER (SIGN UP / LOGIN) *********
 
-// on importe notre app express
+// on importe le framework 'Express'
 const express = require('express');
 
 // on crée un routeur de notre app express pour utiliser nos fonctions CRUD
@@ -10,7 +10,7 @@ const router = express.Router();
 const password = require("../middleware/password")
 const userCtrl = require('../controllers/user');
 
-// on crée nos routes post pour signup et login en passant nos logiques associées.
+// on crée nos routes post pour signup et login en passant nos logiques controlleurs et middlewares associées.
 router.post('/signup', password, userCtrl.signup);
 router.post('/login', userCtrl.login);
 
